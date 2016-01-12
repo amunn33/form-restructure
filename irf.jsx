@@ -388,5 +388,5 @@ var checkBoxes =
 	}];
 	
 // Can only render once, other divs get deleted
-//React.render(<CheckBoxList followUpTitle={checkBoxTitle} followUpBoxes={checkBoxes} />, document.getElementById('Questions'));
-React.render(<QuestionList/>, document.getElementById('Questions'));
+React.render(<CheckBoxList followUpTitle={checkBoxTitle} followUpBoxes={checkBoxes} />, document.getElementById('Questions'));
+//React.render(<QuestionList/>, document.getElementById('Questions'));
