@@ -84,7 +84,7 @@ const RedFlag = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div className="redFlag">
 				{this.props.flagID}
 				<input 
 					type="checkbox"
@@ -92,7 +92,7 @@ const RedFlag = React.createClass({
 					value={this.props.val}
 					checked={this.isSelected}
 					onChange={this.handleChange} />
-				<span className="redFlag">
+				<span>
 					{this.props.weight}
 					{this.props.txt}
 				</span>
@@ -111,7 +111,7 @@ const Answer = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div className="answer">
 				{this.props.answerID}
 				<input 
 					type="checkbox"
@@ -127,7 +127,7 @@ const Answer = React.createClass({
 const Action = React.createClass({
 	render: function() {
 		return (
-			<div>
+			<div className="action">
 				{this.props.txt}
 			</div>
 	)}

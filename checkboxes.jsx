@@ -1,5 +1,6 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import React from 'react';
+
 /*
 const CheckBoxList = React.createClass({
 	render: function() {
@@ -28,9 +29,15 @@ const CheckBoxList = React.createClass({
 */
 
 const CheckBox = React.createClass({
+	getDefaultProps: function() {
+		return {
+		 type: "checkbox" 
+		};
+	},
 	render: function() {
+		var divID="div-".concat(this.props.id);
 		return (
-			<div>
+			<div id={divID}>
 				{this.props.id}
 				<input 
 					type={this.props.type}
@@ -47,17 +54,17 @@ const CheckBox = React.createClass({
 const procedureMarkup = (	
 	<ul>
 		<li>
-			<CheckBox id="8.1" type="checkbox" label="Call Subcommittee Chair" name="call_subcommittee_chair" />
+			<CheckBox id="8.1" label="Call Subcommittee Chair" name="call_subcommittee_chair" />
 		</li>
 		<li>
-			<CheckBox id="8.2" type="checkbox" label="Call THN to cross-check the names (6223856)" name="call_thn_to_cross_check" />	
-			Had any name come up before?
-			<CheckBox id="" type="checkbox" label="No" name="no_repeat" />
-			<CheckBox id="" type="checkbox" label="Yes" name="yes_repeat" />
-			<CheckBox id="" type="text" label="If yes, write # from the table above" name="name_repeat" />
+			<CheckBox id="8.2" label="Call THN to cross-check the names (6223856)" name="call_thn_to_cross_check" />	
+				Had any name come up before?
+				<CheckBox id="" label="No" name="no_repeat" />
+				<CheckBox id="" label="Yes" name="yes_repeat" />
+				<CheckBox id="" type="text" label="If yes, write # from the table above" name="name_repeat" />
 		</li>
 		<li>
-			<CheckBox id="8.3" type="checkbox" label="Scan and submit to THN the same day" name="scan_and_submit_same_day" />
+			<CheckBox id="8.3" label="Scan and submit to THN the same day" name="scan_and_submit_same_day" />
 		</li>
 	</ul>
 );
@@ -65,19 +72,19 @@ const procedureMarkup = (
 const typeInterceptMarkup = (
 	<ul>
 		<li>
-			<CheckBox id="9.1" type="checkbox" label="Gulf Countries" name="gulf_countries" />
+			<CheckBox id="9.1" label="Gulf Countries" name="gulf_countries" />
 		</li>
 		<li>
-			<CheckBox id="9.3" type="checkbox" label="Unsafe Migration" name="unsafe_migration" />
+			<CheckBox id="9.3" label="Unsafe Migration" name="unsafe_migration" />
 		</li>
 		<li>
-			<CheckBox id="9.4" type="checkbox" label="Circus" name="circus" />
+			<CheckBox id="9.4" label="Circus" name="circus" />
 		</li>
 		<li>
-			<CheckBox id="9.5" type="checkbox" label="Runaway" name="runaway" />
+			<CheckBox id="9.5" label="Runaway" name="runaway" />
 		</li>
 		<li>
-			<CheckBox id="9.6" type="checkbox" label="Was any trafficker taken into police custody?" name="police_custody" />
+			<CheckBox id="9.6" label="Was any trafficker taken into police custody?" name="police_custody" />
 			<CheckBox id="" type="text" label="If yes, write # from the table above" name="name_custody" />
 		</li>
 		<li>
