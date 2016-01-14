@@ -1,33 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-/*
-const CheckBoxList = React.createClass({
-	render: function() {
-		return (
-			<div>
-				<h2>{this.props.followUpTitle}</h2>
-				<ul>
-					{this.props.followUpBoxes.map(function (box) {
-						var type = "checkbox";
-						if (box.boxType) type=box.boxType;
-
-						return (
-							<CheckBox
-								id={box.boxID}
-								label={box.boxLabel}
-								name={box.boxName}
-								followUpTitle={box.followUpTitle}
-								followUpBoxes={box.followUpBoxes}
-								type={type} />
-						)
-					})}
-				</ul>
-			</div>
-	)}
-});
-*/
-
 const CheckBoxGroup = React.createClass({
 	render: function() {
 		return (
@@ -61,6 +34,28 @@ const CheckBox = React.createClass({
 	)}
 });
 
+const topBoxMarkup = (
+	<CheckBoxGroup groupID="topBox" title="">
+		<CheckBox id="IRF Number" label="" name="irf_number" type="text"/>
+		<CheckBox id="Date/Time" label="" name="date_time" type="date"/>
+		<CheckBox id="# of victims" label="" name="number_victims" type="text"/>
+		<CheckBox id="# of traffickers" label="" name="number_traffickers" type="text"/>
+		<CheckBox id="Location" label="" name="location" type="text"/>
+		<CheckBox id="Staff Name" label="" name="staff_name" type="text"/>
+	</CheckBoxGroup>
+);
+
+const familyMemberTalkedToMarkup = (
+	<CheckBoxGroup groupID="familyMember" title="Which family member did you talk to?">
+		<CheckBox id="4.1" label="Own brother" name="own_brother" />
+		<CheckBox id="4.2" label="Own sister" name="own_sister" />
+		<CheckBox id="4.3" label="Own father" name="own_father" />
+		<CheckBox id="4.4" label="Own mother" name="own_mother" />
+		<CheckBox id="4.5" label="Own grandparent" name="own_grandparent" />
+		<CheckBox id="4.6" label="Own aunt / uncle" name="own_aunt_uncle" />
+		<CheckBox id="4.7" label="Other" name="other_family" type="text" />
+	</CheckBoxGroup>
+)
 
 const contactMarkup = (
 	<CheckBoxGroup groupID="contact" title="Contact">
@@ -109,6 +104,8 @@ const typeInterceptMarkup = (
 	</CheckBoxGroup>
 );
 
-React.render(contactMarkup, document.getElementById("Contact"))
+React.render(familyMemberTalkedToMarkup, document.getElementById("FamilyTalkedTo"));
+React.render(topBoxMarkup, document.getElementById("TopBox"));
+React.render(contactMarkup, document.getElementById("Contact"));
 React.render(typeInterceptMarkup, document.getElementById("TypeIntercept"));
 React.render(procedureMarkup, document.getElementById("Procedures"));

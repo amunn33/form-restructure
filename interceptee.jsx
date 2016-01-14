@@ -6,9 +6,9 @@ const Interceptee = React.createClass({
 		return (
 			<div>
 				<select>
-					<option value="-">-</option>
-					<option value="v">V</option>
-					<option value="t">T</option>
+					<option value="">------</option>
+					<option value="v">Victim</option>
+					<option value="t">Trafficker</option>
 				</select>
 				<input type="text" name="full_name" />
 				<select>
