@@ -4,8 +4,8 @@ import React from 'react';
 const CheckBoxGroup = React.createClass({
 	render: function() {
 		return (
-			<div id={this.props.groupID} class="checkboxGroup">
-				{this.props.title}
+			<div id={this.props.groupID} className="checkboxGroup">
+				<h3>{this.props.title}</h3>
 				{this.props.children}
 			</div>
 		)
@@ -21,7 +21,7 @@ const CheckBox = React.createClass({
 	render: function() {
 		var divID="div-".concat(this.props.id);
 		return (
-			<div id={divID} class="checkbox">
+			<div id={divID} className="checkbox">
 				{this.props.id}
 				<input 
 					type={this.props.type}
@@ -67,7 +67,12 @@ const contactMarkup = (
 		<CheckBox id="6.6" label="Other NGO" name="contact_other_ngo" />
 		<CheckBox id="6.7" label="Police" name="contact_police" />
 		<CheckBox id="6.8" label="Subcomittee Member" name="contact_subcomittee_member" />
-		<CheckBox id="6.9" label="Other" name="contat_other" type="text" />
+		<CheckBox id="6.9" label="Other" name="contact_other" type="text" />
+		<CheckBoxGroup groupID="payForInformation" title="Did you pay this contact for the information?">
+			<CheckBox id="6.10" label="Yes" name="paid_contact_for_info" />
+			<CheckBox id="6.11" label="No" name="did_not_pay_contact_for_info" />
+			<CheckBox id="How much?" label="" name="amout_paid_for_info" type="text" />
+		</CheckBoxGroup>
 	</CheckBoxGroup>
 );
 

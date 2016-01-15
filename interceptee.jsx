@@ -1,27 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const IntercepteeTable = React.createClass({
+	render: function() {
+		return (
+			<table className="table table-bordered interceptee-form" id="intercepteesTable" data-placement="left">
+				<thead>
+					<tr>
+						<th> V </th>
+						<th> Full Name </th>
+						<th> F </th>
+						<th> Age </th>
+						<th> Address 1 </th>
+						<th> Address 2 </th>
+						<th> Phone Contact </th>
+						<th> Relation to... </th>
+					</tr>
+				</thead>
+				<tbody>
+					{this.props.children}
+				</tbody>
+			</table>
+		)		
+	}
+});
+
 const Interceptee = React.createClass({
 	render: function() {
 		return (
-			<div>
-				<select>
-					<option value="">------</option>
-					<option value="v">Victim</option>
-					<option value="t">Trafficker</option>
-				</select>
-				<input type="text" name="full_name" />
-				<select>
-					<option value="-">-</option>
-					<option value="m">M</option>
-					<option value="f">F</option>
-				</select>
-				<input type="number" name="age" />
-				<input type="text" name="add1" />
-				<input type="text" name="add2" />
-				<input type="text" name="phone_contact" />
-				<input type="text" name="relation" />
-			</div>
+			<tr>
+				<td>
+					<select>
+						<option value="">------</option>
+						<option value="v">Victim</option>
+						<option value="t">Trafficker</option>
+					</select>
+				</td>
+				<td>
+					<input type="text" name="full_name" />
+				</td>
+				<td>
+					<select>
+						<option value="-">-</option>
+						<option value="m">M</option>
+						<option value="f">F</option>
+					</select>
+				</td>
+				<td>
+					<input type="number" name="age" />
+				</td>
+				<td>
+					<input type="text" name="add1" />
+				</td>
+				<td>
+					<input type="text" name="add2" />
+				</td>
+				<td>
+					<input type="text" name="phone_contact" />
+				</td>
+				<td>
+					<input type="text" name="relation" />
+				</td>
+			</tr>
 		)
 	}
 });
@@ -29,38 +69,18 @@ const Interceptee = React.createClass({
 
 
 const intercepteeMarkup = (	
-	<ul>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-		<li>
-			<Interceptee />
-		</li>
-	</ul>
+	<IntercepteeTable>
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+		<Interceptee />
+	</IntercepteeTable>
 );
 
 
