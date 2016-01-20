@@ -1,68 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/*
-const QuestionList = React.createClass({
-	
-	getDataFromServer: function(){
-		return [
-		    {
-		      
-		            }
-		          ]
-		        }
-		      ]
-		    }
-		  ];
-	},
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import {connect} from 'react-redux';
 
-	render: function() {
-		var data = this.getDataFromServer();
-
-		var questions = data.map(function(q) {
-			return <Question text={q.text} description={q.description} flags={q.flags} answers={q.answers}/>
-		});
-
-		return (
-			<div className="question-list"> 
-				{questions}
-			</div>
-	)}
-});
-
-const RedFlagList = React.createClass({
-	render: function() {
-		return (
-			<ul>
-				{this.props.flags.map(function (flag){
-					return <RedFlag
-						flagID={flag.flagID}
-						weight={flag.weight}
-						boxName={flag.boxName}
-						val={flag.val}
-						txt={flag.txt} />
-				})}
-			</ul>
-	)}
-});
-
-const ActionList = React.createClass({
-	render: function() {
-		return (
-			<ul>
-				{this.props.actions.map(function (a) {
-					return (
-						<Action
-							txt={a.txt}
-							flags={a.flags}
-							lights={a.lights} />
-					)
-				})}
-			</ul>
-	)}
-});
-*/
-
-const Question = React.createClass({
+export const Question = React.createClass({
 	render: function() {
 		return (
 			<div className="question">
@@ -75,7 +16,7 @@ const Question = React.createClass({
 
 
 // This looks eerily similar to redflag
-const Answer = React.createClass({
+export const Answer = React.createClass({
 	getInitialState: function() {
 		return {isSelected: false}
 	},
@@ -98,7 +39,7 @@ const Answer = React.createClass({
 	)}
 });
 
-const Action = React.createClass({
+export const Action = React.createClass({
 	render: function() {
 		return (
 			<div className="action">
@@ -108,7 +49,7 @@ const Action = React.createClass({
 	)}
 });
 
-const RedFlag = React.createClass({
+export const RedFlag = React.createClass({
 	getInitialState: function() {
 		return {isSelected: true}
 	},
@@ -134,7 +75,7 @@ const RedFlag = React.createClass({
 	)}
 });
 
-const GreenLightList = React.createClass({
+export const GreenLightList = React.createClass({
 	render: function() {
 		return (
 			<ul>
@@ -149,7 +90,7 @@ const GreenLightList = React.createClass({
 	)}
 });
 
-const questionMarkup = (
+export const questionMarkup = (
 	<Question text="Who is in the group?" description="">
 		<Answer answerID="1.1" val="alone" txt="Alone">
 			<Action txt="Are you meeting someone in India?">
