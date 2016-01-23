@@ -36,7 +36,8 @@ export default function(state = Map(), action) {
   }
   return state;
 }
-
+/*
+How I want to set up the state
 {
 	alone: "",
 	redFlags = [
@@ -45,3 +46,4 @@ export default function(state = Map(), action) {
 		was_travelling_with_someone_not_with_her: "",
 	]
 }
+*/
