@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import reducer as myReducer from './reducer';
-import reducer as formReducer from 'redux-form';
+//import reducer as formReducer from 'redux-form';
 import {setState} from './action_creators';
 import remoteActionMiddleware from './remote_action_middleware';
 import {Question, AnswerContainer, Action, RedFlagContainer, GreenLightList} from './components/questions';
