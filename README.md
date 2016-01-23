@@ -14,3 +14,5 @@ Run the Webpack server
 Navigate to the default URL in a browser:
 
 http://localhost:8080/webpack-dev-server/
+
+Components are held in separate .jsx files and are rendered to the plain index.html file by replacing specific div tags.
