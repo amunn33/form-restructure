@@ -19,5 +19,8 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "webpack": "^1.12.11"
-  }
+  },
+  "modulesDirectories": ["web_loaders", "web_modules", "node_loaders", "node_modules"],
+  "extensions": ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js"],
+  "packageMains": ["webpackLoader", "webLoader", "loader", "main"]
 }
