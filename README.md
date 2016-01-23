@@ -1,16 +1,9 @@
 # form-restructure
-Install node modules (uses configuration in package.json):
+ReactRedux branch is currently broken as it is in the process of being overhauled from pure React to React with Redux.
 
-% npm install
+Webpack-dev-server does not currently run but the current setup includes a main Redux files with failed functionality.
 
-Install the webpack and the webpack server as global modules (use sudo as required):
+My testing was done only with a small section of the Question component group (src/index.jsx shows markup I was attempting to render). You can look through the Question component (src/components/question.jsx) to see how the onChange function creates actions (specifically Answer and RedFlag).
 
-% npm install --global webpack webpack-dev-server
+Actions are held in src/action_creators which is sent to reducer in src/reducer to make changes to state.
 
-Run the Webpack server
-
-% webpack-dev-server --progress --colors
-
-Navigate to the default URL in a browser:
-
-http://localhost:8080/webpack-dev-server/
